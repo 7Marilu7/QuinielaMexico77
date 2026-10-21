@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E11W5RFZDK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E11W5RFZDK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Resultados de quinielas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #c7dcf3;
+    background-image: linear-gradient(135deg, #e8f0fa 0%, #c7dcf3 100%);
+    background-attachment: scroll;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #263449;
+}
+
+    :root {
+        --m77-navy: #1d3557;
+        --m77-navy-hover: #294d79;
+        --m77-green: #16834a;
+        --m77-green-hover: #116b3b;
+        --m77-border: #d9e0e8;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .table-responsive {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto 20px;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+        border: 1px solid #dce4ee;
+        border-radius: 14px;
+        padding: 10px;
+        background: #ffffff;
+        box-shadow: 0 6px 20px rgba(29, 52, 82, 0.12);
+    }
+
+    .table-responsive::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+        background: #e8f0fa;
+        border-radius: 10px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: #8ca6c5;
+        border-radius: 10px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: var(--m77-navy);
+    }
+
+    #tabla-quinielas {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        min-width: max-content;
+        margin: 0;
+        background: #ffffff;
+        table-layout: auto;
+    }
+
+    #tabla-quinielas th,
+    #tabla-quinielas td {
+        border-right: 1px solid #dce4ee;
+        border-bottom: 1px solid #dce4ee;
+        padding: 8px 10px;
+        text-align: center;
+        font-size: 13px;
+        vertical-align: middle;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        line-height: 1.35;
+    }
+
+    #tabla-quinielas tr > *:first-child {
+        border-left: 1px solid #dce4ee;
+    }
+
+    #tabla-quinielas thead tr:first-child th {
+        border-top: 1px solid #dce4ee;
+    }
+
+    #tabla-quinielas th {
+        background-color: var(--m77-navy);
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 0.2px;
+        line-height: 1.35;
+        min-width: 75px;
+        max-width: 150px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        vertical-align: middle;
+    }
+
+    #tabla-quinielas th small {
+        display: block;
+        margin-top: 4px;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 1.3;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    #tabla-quinielas tbody tr:nth-child(even) {
+        background-color: #f2f6fb;
+    }
+
+    #tabla-quinielas tbody tr:hover {
+        background-color: #e5effb;
+    }
+
+    .nombre-participante {
+        font-weight: bold;
+        background-color: #ffffff;
+        min-width: 110px;
+        max-width: 150px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    #tabla-quinielas td.acertado {
+        background-color: #a8e6a1;
+        font-weight: bold;
+        color: #2e7d32;
+    }
+
+    #buscador {
+        display: block;
+        width: 95%;
+        max-width: 435px;
+        padding: 10px 12px;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        color: #263449;
+        font-size: 16px;
+        margin: 0 auto;
+    }
+
+    #buscador:focus {
+        border-color: #3275b9;
+        box-shadow: 0 0 0 3px rgba(50, 117, 185, 0.14);
+        outline: none;
+    }
+
+    #btn-regresar {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 24px;
+        background-color: var(--m77-navy);
+        color: #ffffff;
+        border: 1px solid var(--m77-navy);
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 2px 6px rgba(29, 53, 87, 0.08);
+        transition: background-color 0.2s ease,
+                    color 0.2s ease,
+                    border-color 0.2s ease,
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+    }
+
+    #btn-regresar:hover {
+        background-color: var(--m77-navy-hover);
+        border-color: var(--m77-navy-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(29, 53, 87, 0.14);
+    }
+
+#montos-premios {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 12px auto;
+}
+
+.premio-card {
+    min-width: 0;
+    padding: 12px 8px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid var(--m77-border);
+    border-top: 3px solid var(--m77-navy);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(29, 53, 87, 0.07);
+}
+
+.premio-card-principal {
+    border-top-color: #d4a52c;
+    background: linear-gradient(180deg, #fffdf6 0%, #ffffff 100%);
+}
+
+.premio-titulo {
+    margin: 0 0 8px;
+    color: var(--m77-navy);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.premio-monto {
+    margin: 0;
+    color: var(--m77-green);
+    font-size: clamp(19px, 2vw, 25px);
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.premio-detalle {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+@media (max-width: 800px) {
+    #montos-premios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .premio-card {
+        padding: 16px 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .premio-titulo {
+        font-size: 12px;
+    }
+
+    .premio-monto {
+        font-size: 21px;
+    }
+}
+
+    @font-face {
+        font-family: 'Cooper Black';
+        src: url('CooperBlack.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+   .logo-wrapper {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo-container {
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+    .logo-quiniela {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        font-family: 'Concert One', sans-serif;
+        font-size: 1.1rem;
+        color: #111;
+        letter-spacing: 2px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .logo-mexico77 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.1em;
+        margin-top: 40px;
+        font-family: 'Concert One', sans-serif;
+        font-size: 4.8rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .logo-me {
+        color: #00843D;
+    }
+
+    .logo-xi {
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .logo-co {
+        color: #E10600;
+    }
+
+    .logo-77 {
+        color: #111;
+        margin-bottom: 1px;
+    }
+
+    footer {
+        background-color: var(--m77-navy);
+        color: #ffffff;
+        padding: 10px;
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    footer .copyright {
+        text-align: center;
+        width: 100%;
+    }
+
+    .ganador {
+        background-color: yellow !important;
+    }
+
+    .segundo-lugar {
+        background-color: rgb(235, 146, 95) !important;
+    }
+
+    #ganadores-container {
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    .perfecta {
+        background-color: rgb(208, 144, 238) !important;
+    }
+
+    .cero {
+        background-color: rgb(169, 194, 57) !important;
+    }
+
+    #tabla-quinielas td:last-child,
+    #tabla-quinielas th:last-child {
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+        padding-left: 6px;
+        padding-right: 6px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 8px 5px;
+        }
+
+        .logo-mexico77 {
+            font-size: clamp(3rem, 12vw, 4.8rem);
+        }
+
+        .logo-quiniela {
+            font-size: 1rem;
+        }
+
+        #montos-premios {
+            gap: 8px 12px;
+            padding: 0 5px;
+        }
+
+        #montos-premios p {
+            font-size: 13px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 18px;
+            padding: 0;
+            overflow-x: auto;
+            overflow-y: visible;
+            border: 1px solid #dce4ee;
+            border-radius: 10px;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x pan-y;
+        }
+
+        #tabla-quinielas {
+            width: max-content;
+            min-width: 100%;
+            table-layout: auto;
+        }
+
+        #tabla-quinielas th,
+        #tabla-quinielas td {
+            padding: 7px 9px;
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        #tabla-quinielas th {
+            min-width: 85px;
+            max-width: 125px;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        #tabla-quinielas th small {
+            font-size: 10px;
+        }
+
+        #tabla-quinielas td.nombre-participante,
+        #tabla-quinielas th.nombre-participante {
+            min-width: 110px;
+            max-width: 140px;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        #tabla-quinielas td:last-child,
+        #tabla-quinielas th:last-child {
+            width: 60px;
+            min-width: 60px;
+            max-width: 60px;
+            white-space: normal;
+        }
+
+        #buscador {
+            width: 96%;
+            font-size: 16px;
+        }
+
+        #btn-regresar {
+            max-width: 100%;
+        }
+
+        footer {
+            height: auto;
+            min-height: 40px;
+            padding: 10px 6px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        body {
+            padding: 8px 3px;
+        }
+
+        #tabla-quinielas th,
+        #tabla-quinielas td {
+            padding: 6px 7px;
+            font-size: 11px;
+        }
+
+        #tabla-quinielas th {
+            min-width: 80px;
+            max-width: 110px;
+        }
+
+        #tabla-quinielas td.nombre-participante,
+        #tabla-quinielas th.nombre-participante {
+            min-width: 100px;
+            max-width: 120px;
+        }
+
+        #montos-premios p {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 900px) and (orientation: landscape) {
+        .table-responsive, .table-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+   max-width: 100% !important;
+}
+        body {
+            min-height: 100dvh;
+            font-size: 13px;
+            overflow-x: hidden;
+        }
+        .logo-mexico77 {
+            font-size: clamp(2rem, 7vw, 3rem);
+            margin-top: 15px;
+        }
+
+        .logo-quiniela {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            top: -3px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        #buscador {
+            padding: 7px 10px;
+        }
+
+        #montos-premios {
+            gap: 5px 10px;
+            margin: 6px auto;
+        }
+
+        #montos-premios p {
+            font-size: 11px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0 12px;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            overflow-x: auto;
+            overflow-y: visible;
+        }
+
+        #tabla-quinielas {
+            margin: 0;
+        }
+
+        #tabla-quinielas th,
+        #tabla-quinielas td {
+            padding: 5px 7px;
+            font-size: 11px;
+            line-height: 1.2;
+        }
+
+        #tabla-quinielas th {
+            min-width: 65px;
+            max-width: 110px;
+        }
+
+        #tabla-quinielas th small {
+            font-size: 9px;
+        }
+
+        #tabla-quinielas td.nombre-participante,
+        #tabla-quinielas th.nombre-participante {
+            min-width: 90px;
+            max-width: 120px;
+        }
+
+        #btn-regresar {
+            padding: 8px 18px;
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 12px;
+            padding: 6px;
+            font-size: 10px;
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 0;
+        }
+
+        #montos-premios,
+        #ganadores-container,
+        #btn-regresar {
+            max-width: 100%;
+        }
+    }
+
+@media (max-width: 600px) {
+    #montos-premios {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin: 10px auto 14px;
+        padding: 0 3px;
+    }
+
+    #montos-premios .premio-card {
+        padding: 12px 6px;
+        border-radius: 9px;
+    }
+
+    #montos-premios .premio-titulo {
+        margin-bottom: 7px;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    #montos-premios .premio-monto {
+        font-size: clamp(17px, 4.5vw, 23px);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    #montos-premios .premio-detalle {
+        margin-top: 5px;
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .logo-mexico77 {
+        margin-top: 30px;
+        font-size: clamp(2.7rem, 11vw, 4rem);
+        gap: 0.06em;
+    }
+
+    .logo-quiniela {
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
+
+    h1 {
+        margin: 14px 0;
+        font-size: 1.6rem;
+    }
+
+    #buscador {
+        width: 100%;
+        max-width: 435px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .table-responsive {
+        margin-bottom: 14px;
+        padding: 0;
+        border-radius: 10px;
+    }
+
+    #tabla-quinielas th,
+    #tabla-quinielas td {
+        padding: 9px 8px;
+        font-size: 12px;
+    }
+
+    #ganadores-container {
+        margin-top: 18px;
+        padding: 0 5px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    #ganadores-container p {
+        margin: 9px 0;
+    }
+
+    #btn-regresar {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    #montos-premios .premio-card {
+        padding: 10px 4px;
+    }
+
+    #montos-premios .premio-titulo {
+        font-size: 11px;
+    }
+
+    #montos-premios .premio-monto {
+        font-size: 17px;
+    }
+
+    #montos-premios .premio-detalle {
+        font-size: 9px;
+    }
+
+    .logo-mexico77 {
+        font-size: clamp(2.4rem, 10.5vw, 2.7rem);
+    }
+}
+</style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <span class="logo-quiniela">Quiniela</span>
+                <div class="logo-mexico77">
+                    <span class="logo-me">MÉ</span>
+                    <span class="logo-xi">XI</span>
+                    <span class="logo-co">CO</span>
+                    <span class="logo-77">77</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="text-align:center;">Resultados</h1>
+    <input type="text" id="buscador" placeholder="Buscar por nombre...">
+
+<div id="montos-premios">
+    <div class="premio-card premio-card-principal">
+        <p class="premio-titulo">🏆 Ganador</p>
+        <p class="premio-monto">
+            $<span id="monto-ganador"></span>
+        </p>
+        <p class="premio-detalle">Primer lugar</p>
+    </div>
+
+    <div class="premio-card">
+        <p class="premio-titulo">🥈 Segundo lugar</p>
+        <p class="premio-monto">
+            $<span id="monto-segundo-lugar"></span>
+        </p>
+        <p class="premio-detalle">Segundo premio</p>
+    </div>
+
+    <div class="premio-card">
+        <p class="premio-titulo">🎯 Quiniela perfecta</p>
+        <p class="premio-monto">
+            $<span id="monto-quiniela-perfecta"></span>
+        </p>
+        <p class="premio-detalle">Todos los resultados acertados</p>
+    </div>
+
+    <div class="premio-card">
+        <p class="premio-titulo">⚽ Quiniela de 0 puntos</p>
+        <p class="premio-monto">
+            $<span id="monto-quiniela-cero"></span>
+        </p>
+        <p class="premio-detalle">Premio especial</p>
+    </div>
+
+</div>
+    <p><center>Los resultados de los partidos se actualizan constantemente</center></p>
+    <div class="table-responsive">
+        <table id="tabla-quinielas">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán las filas con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="ganadores-container">
+        <b><p>Ganador(es): </b><span id="nombre-ganador"></span></p>
+        <b><p>Segundo lugar: </b><span id="nombre-segundo"></span></p>
+        <b><p>Quiniela perfecta: </b><span id="nombre-perfecta"></span></p>
+        <b><p>Quiniela de 0 puntos: </b><span id="nombre-cero"></span></p>
+    </div>
+
+    <button id="btn-regresar">Volver</button>
+
+    <script>
+        async function cargarQuinielas() {
+            try {
+                const response = await fetch('obtener_quinielas.php');
+                const data = await response.json();
+
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                const tabla = document.getElementById('tabla-quinielas');
+                const theadRow = tabla.querySelector('thead tr');
+                const tbody = tabla.querySelector('tbody');
+                while (theadRow.children.length > 3) {
+                    theadRow.removeChild(theadRow.children[2]);
+                }
+
+                data.partidos.forEach(partido => {
+                    const th = document.createElement('th');
+                    th.innerHTML = `${partido.local} - ${partido.visitante}<br><small>${partido.horario}</small>`;
+                    theadRow.insertBefore(th, theadRow.lastElementChild);
+                });
+
+                tbody.innerHTML = '';
+                data.quinielas.forEach((quiniela, index) => {
+                    const tr = document.createElement('tr');
+                    tr.setAttribute('data-nombre', quiniela.nombre.toLowerCase());
+
+                    const tdNumero = document.createElement('td');
+                    tdNumero.classList.add('numero-fila');
+                    tr.appendChild(tdNumero);
+
+                    const tdNombre = document.createElement('td');
+                    tdNombre.textContent = quiniela.nombre;
+                    tdNombre.classList.add('nombre-participante');
+                    tr.appendChild(tdNombre);
+
+                    quiniela.selecciones.forEach((seleccion, index) => {
+                        const td = document.createElement('td');
+                        const resultadoOficial = data.partidos[index]?.resultado || null;
+
+                        if (seleccion === resultadoOficial && resultadoOficial !== null) {
+                            td.classList.add('acertado');
+                        }
+
+                        switch (seleccion) {
+                            case 'local':
+                                td.textContent = 'Local';
+                                break;
+                            case 'empate':
+                                td.textContent = 'Empate';
+                                break;
+                            case 'visitante':
+                                td.textContent = 'Visitante';
+                                break;
+                            default:
+                                td.textContent = '-';
+                        }
+
+                        tr.appendChild(td);
+                    });
+
+                    const tdPuntos = document.createElement('td');
+                    tdPuntos.textContent = quiniela.puntos;
+                    tdPuntos.style.fontWeight = 'bold';
+                    tdPuntos.classList.add('puntos-participante');
+                    tr.appendChild(tdPuntos);
+
+                    const tdPagada = document.createElement('td');
+
+                    if (quiniela.pagada === 1) {
+                        tdPagada.textContent = 'Pagada';
+                        tdPagada.style.color = 'green';
+                        tdPagada.style.fontWeight = 'bold';
+                    } else {
+                        tdPagada.textContent = 'No pagada';
+                        tdPagada.style.color = 'red';
+                        tdPagada.style.fontWeight = 'bold';
+                    }
+
+                    tr.appendChild(tdPagada);
+                    tbody.appendChild(tr);
+                });
+
+                actualizarConteoVisible();
+
+            } catch (error) {
+                console.error('Error al cargar quinielas:', error);
+                alert('Error al cargar quinielas');
+            } finally {
+                inicializarBuscador();
+            }
+        }
+
+        function inicializarBuscador() {
+            const buscador = document.getElementById('buscador');
+            const tabla = document.getElementById('tabla-quinielas');
+            const filas = tabla.querySelectorAll('tbody tr');
+
+            buscador.addEventListener('input', function() {
+                const filtro = this.value.toLowerCase();
+
+                filas.forEach(fila => {
+                    const nombre = fila.getAttribute('data-nombre');
+
+                    if (nombre.includes(filtro)) {
+                        fila.style.display = "";
+                    } else {
+                        fila.style.display = "none";
+                    }
+                });
+
+                actualizarConteoVisible();
+            });
+        }
+
+        function actualizarConteoVisible() {
+            const tabla = document.getElementById('tabla-quinielas');
+            const filas = tabla.querySelectorAll('tbody tr');
+            let contador = 1;
+
+            filas.forEach(fila => {
+                if (fila.style.display !== 'none') {
+                    const tdNumero = fila.querySelector('.numero-fila');
+
+                    if (tdNumero) {
+                        tdNumero.textContent = contador;
+                        contador++;
+                    }
+                }
+            });
+        }
+
+        cargarQuinielas();
+
+        window.addEventListener('load', () => {
+            cargarMontos();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('obtener_montos.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('monto-ganador').innerText = data.monto_ganador;
+                        document.getElementById('monto-quiniela-perfecta').innerText = data.monto_quiniela_perfecta;
+                        document.getElementById('monto-quiniela-cero').innerText = data.monto_quiniela_cero;
+                        document.getElementById('monto-segundo-lugar').innerText = data.monto_segundo_lugar;
+                    }
+                })
+                .catch(error => console.error('Error al cargar montos:', error));
+        });
+
+        document.getElementById('btn-regresar').addEventListener('click', () => {
+            window.location.href = 'index.php';
+        });
+
+        function cargarGanadores() {
+            fetch('obtener_ganadores.php?t=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    if (data.estado !== 'completo') {
+                        document.getElementById('ganadores-container').innerHTML =
+                            '<p>Los ganadores se mostrarán una vez que todos los resultados estén disponibles.</p>';
+                        console.log("Resultados incompletos, no se mostrarán ganadores aún.");
+                        return;
+                    }
+
+                    document.getElementById('nombre-ganador').textContent =
+                        Array.isArray(data.ganador)
+                            ? data.ganador.map(g => g.nombre).join(', ')
+                            : (typeof data.ganador === 'string' ? data.ganador : '-');
+
+                    document.getElementById('nombre-segundo').textContent =
+                        data.segundo ? data.segundo.nombre : '-';
+
+                    document.getElementById('nombre-perfecta').textContent =
+                        Array.isArray(data.perfecta)
+                            ? data.perfecta.map(p => p.nombre).join(', ')
+                            : (data.perfecta ? data.perfecta.nombre : '-');
+
+                    document.getElementById('nombre-cero').textContent =
+                        Array.isArray(data.cero)
+                            ? data.cero.map(c => c.nombre).join(', ')
+                            : (data.cero ? data.cero.nombre : '-');
+
+                    resaltarGanadores(data);
+                })
+                .catch(error => console.error('Error al cargar ganadores:', error));
+        }
+
+        function resaltarGanadores(ganadores) {
+            const filas = document.querySelectorAll('#tabla-quinielas tbody tr');
+
+            filas.forEach(fila => {
+                const tdNombre = fila.querySelector('.nombre-participante');
+                const tdPuntos = fila.querySelector('.puntos-participante');
+
+                if (tdNombre) tdNombre.classList.remove('ganador', 'segundo-lugar', 'perfecta', 'cero');
+                if (tdPuntos) tdPuntos.classList.remove('ganador', 'segundo-lugar', 'perfecta', 'cero');
+            });
+
+            function resaltarPorNombre(nombre, clase) {
+                filas.forEach(fila => {
+                    const tdNombre = fila.querySelector('.nombre-participante');
+                    const tdPuntos = fila.querySelector('.puntos-participante');
+
+                    if (tdNombre && tdNombre.textContent.trim() === nombre.trim()) {
+                        tdNombre.classList.add(clase);
+                        if (tdPuntos) tdPuntos.classList.add(clase);
+                    }
+                });
+            }
+
+            if (Array.isArray(ganadores.ganador)) {
+                ganadores.ganador.forEach(g => resaltarPorNombre(g.nombre, 'ganador'));
+            }
+
+            if (ganadores.segundo) {
+                resaltarPorNombre(ganadores.segundo.nombre, 'segundo-lugar');
+            }
+
+            if (Array.isArray(ganadores.perfecta)) {
+                ganadores.perfecta.forEach(p => resaltarPorNombre(p.nombre, 'perfecta'));
+            }
+
+            if (Array.isArray(ganadores.cero)) {
+                ganadores.cero.forEach(c => resaltarPorNombre(c.nombre, 'cero'));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await cargarQuinielas();
+            cargarGanadores();
+        });
+    </script>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2025 Quiniela México 77. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
