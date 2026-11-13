@@ -21,14 +21,14 @@ El sistema cuenta con herramientas de administración para gestionar partidos, a
 - Identificación de segundo lugar.
 - Identificación de quinielas perfectas.
 - Identificación de quinielas con cero puntos.
-- Administración de partidos.
-- Registro, edición y eliminación de partidos.
+- Administración de partidos: Registro, edición y eliminación de partidos.
 - Actualización de resultados de los encuentros.
 - Configuración de fechas límite para registrar quinielas.
 - Configuración de montos de premios.
 - Consulta y actualización del estado de pago de los participantes.
 - Panel administrativo con inicio de sesión.
 - Diseño adaptable a dispositivos móviles.
+- Seguimiento de visitas y métricas de uso mediante Google Analytics 4.
 
 ## Tecnologías utilizadas
 
@@ -41,6 +41,7 @@ El sistema cuenta con herramientas de administración para gestionar partidos, a
 - PDO
 - Fetch API
 - JSON
+- Google Analytics 4
 
 ## Estructura del proyecto
 
